@@ -11,19 +11,28 @@ import {
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-  const makes = await getMakesForVehicleType();
-  const years = generateYearsRange();
+  try {
+    const makes = await getMakesForVehicleType();
+    const years = generateYearsRange();
 
-  return makes.reduce<Array<ResultPageParams>>(
-    (acc, make) => [
-      ...acc,
-      ...years.map((year) => ({
-        makeId: String(make.MakeId),
-        year: String(year),
-      })),
-    ],
-    []
-  );
+    if (!makes || !Array.isArray(makes)) {
+      throw new Error('Invalid makes data');
+    }
+
+    return makes.reduce<Array<ResultPageParams>>(
+      (acc, make) => [
+        ...acc,
+        ...years.map((year) => ({
+          makeId: String(make.MakeId),
+          year: String(year),
+        })),
+      ],
+      []
+    );
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
 }
 
 const ResultPage = async ({
