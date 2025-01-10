@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -10,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Make } from "../types";
+import { FormEventHandler, useMemo, useState } from "react";
 
 const START_YEAR = 2015;
 
@@ -19,15 +21,33 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
     { length: currentYear - START_YEAR + 1 },
     (_, index) => currentYear - index
   );
+  const [make, setMake] = useState<string>();
+  const [year, setYear] = useState<string>();
+
+  const disabled = useMemo(() => !make || !year, [make, year]);
+
+  const handleMakeChange = (value: string) => {
+    setMake(value);
+  };
+
+  const handleYearChange = (value: string) => {
+    setYear(value);
+  };
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    console.log({ make, year });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="grid gap-6">
         <div className="grid gap-6">
           <div className="grid gap-2">
             <div className="flex items-center">
               <Label>Vehicle make</Label>
             </div>
-            <Select>
+            <Select value={make} onValueChange={handleMakeChange}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Select a make" />
               </SelectTrigger>
@@ -47,7 +67,7 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
             <div className="flex items-center">
               <Label>Model year</Label>
             </div>
-            <Select>
+            <Select value={year} onValueChange={handleYearChange}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Select a year" />
               </SelectTrigger>
@@ -63,7 +83,7 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
               </SelectContent>
             </Select>
           </div>
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full" disabled={disabled}>
             Next
           </Button>
         </div>
