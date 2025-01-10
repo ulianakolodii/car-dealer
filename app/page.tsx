@@ -5,11 +5,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import getMakesForVehicleType from "./services/getMakesForVehicleType";
-import VehicleForm from "./components/VehicleForm";
+import Vehicles from "./components/Vehicles";
 
 const Home = async () => {
-  const result = await getMakesForVehicleType();
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10">
       <div className="flex w-full max-w-sm flex-col gap-6">
@@ -22,7 +20,7 @@ const Home = async () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <VehicleForm makes={result} />
+              <Vehicles />
             </CardContent>
           </Card>
         </div>
