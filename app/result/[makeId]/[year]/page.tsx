@@ -34,7 +34,7 @@ const ResultPage = async ({
   const { makeId, year } = await params;
 
   const vehicleData = await getModelsForMakeIdYear({ makeId, year });
-  if (!vehicleData) {
+  if (!vehicleData || vehicleData.length === 0) {
     notFound();
   }
   return (
