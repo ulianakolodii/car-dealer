@@ -1,14 +1,14 @@
-import getMakesForVehicleType from "@/app/services/getMakesForVehicleType";
-import getModelsForMakeIdYear from "@/app/services/getModelsForMakeIdYear";
-import { ResultPageParams } from "@/app/types";
-import generateYearsRange from "@/app/utils/generateYearsRange";
+import getMakesForVehicleType from '@/app/services/getMakesForVehicleType';
+import getModelsForMakeIdYear from '@/app/services/getModelsForMakeIdYear';
+import { ResultPageParams } from '@/app/types';
+import generateYearsRange from '@/app/utils/generateYearsRange';
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { notFound } from "next/navigation";
+} from '@/components/ui/card';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const makes = await getMakesForVehicleType();

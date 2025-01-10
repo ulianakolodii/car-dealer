@@ -4,8 +4,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import Vehicles from "./components/Vehicles";
+} from '@/components/ui/card';
+import Vehicles from './components/Vehicles';
 
 const Home = async () => {
   return (

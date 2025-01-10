@@ -1,7 +1,9 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Select, SelectTrigger, SelectValue } from "@/components/ui/select";
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Select, SelectTrigger, SelectValue } from '@/components/ui/select';
+
 const VehicleSkeleton = () => {
   return (
     <form>
@@ -35,4 +37,5 @@ const VehicleSkeleton = () => {
     </form>
   );
 };
+
 export default VehicleSkeleton;

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
@@ -10,11 +10,11 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Make } from "../types";
-import { useMemo, useState } from "react";
-import generateYearsRange from "../utils/generateYearsRange";
-import Link from "next/link";
+} from '@/components/ui/select';
+import { Make } from '../types';
+import { useMemo, useState } from 'react';
+import generateYearsRange from '../utils/generateYearsRange';
+import Link from 'next/link';
 
 const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
   const years = generateYearsRange();
@@ -75,7 +75,7 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
               </SelectContent>
             </Select>
           </div>
-          <Link href={isDisabled ? "#" : `/result/${make}/${year}`} passHref>
+          <Link href={isDisabled ? '#' : `/result/${make}/${year}`} passHref>
             <Button disabled={isDisabled} className="w-full">
               Next
             </Button>

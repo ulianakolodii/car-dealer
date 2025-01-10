@@ -1,4 +1,4 @@
-import { Model, ResultPageParams } from "../types";
+import { Model, ResultPageParams } from '../types';
 
 const getModelsForMakeIdYear = async ({ makeId, year }: ResultPageParams) => {
   const response = await fetch(

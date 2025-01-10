@@ -1,4 +1,4 @@
-import { Make } from "../types";
+import { Make } from '../types';
 
 const getMakesForVehicleType = async () => {
   const response = await fetch(
