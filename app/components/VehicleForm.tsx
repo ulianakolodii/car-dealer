@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -11,17 +12,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Make } from "../types";
-import { FormEventHandler, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import generateYearsRange from "../utils/generateYearsRange";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
   const years = generateYearsRange();
   const [make, setMake] = useState<string>();
   const [year, setYear] = useState<string>();
-  const router = useRouter();
 
-  const disabled = useMemo(() => !make || !year, [make, year]);
+  const isDisabled = useMemo(() => !make || !year, [make, year]);
 
   const handleMakeChange = (value: string) => {
     setMake(value);
@@ -31,14 +31,8 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
     setYear(value);
   };
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-
-    router.push(`/result/${make}/${year}`);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="grid gap-6">
         <div className="grid gap-6">
           <div className="grid gap-2">
@@ -81,9 +75,11 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
               </SelectContent>
             </Select>
           </div>
-          <Button type="submit" className="w-full" disabled={disabled}>
-            Next
-          </Button>
+          <Link href={isDisabled ? "#" : `/result/${make}/${year}`} passHref>
+            <Button disabled={isDisabled} className="w-full">
+              Next
+            </Button>
+          </Link>
         </div>
       </div>
     </form>
