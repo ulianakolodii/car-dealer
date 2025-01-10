@@ -12,17 +12,14 @@ import {
 } from "@/components/ui/select";
 import { Make } from "../types";
 import { FormEventHandler, useMemo, useState } from "react";
-
-const START_YEAR = 2015;
+import generateYearsRange from "../utils/generateYearsRange";
+import { useRouter } from "next/navigation";
 
 const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
-  const currentYear = new Date().getFullYear();
-  const years = Array.from(
-    { length: currentYear - START_YEAR + 1 },
-    (_, index) => currentYear - index
-  );
+  const years = generateYearsRange();
   const [make, setMake] = useState<string>();
   const [year, setYear] = useState<string>();
+  const router = useRouter();
 
   const disabled = useMemo(() => !make || !year, [make, year]);
 
@@ -36,7 +33,8 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log({ make, year });
+
+    router.push(`/result/${make}/${year}`);
   };
 
   return (
@@ -55,7 +53,7 @@ const VehicleForm = ({ makes }: { makes: Array<Make> }) => {
                 <SelectGroup>
                   <SelectLabel>Make</SelectLabel>
                   {makes.map((make) => (
-                    <SelectItem key={make.MakeId} value={make.MakeName}>
+                    <SelectItem key={make.MakeId} value={String(make.MakeId)}>
                       {make.MakeName}
                     </SelectItem>
                   ))}
