@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Explore Car Dealer App
 
-## Getting Started
+With the help of **Car Dealer App**, you can investigate more about your favorite Star Wars heroes!
 
-First, run the development server:
+### Interactive Version
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can access the interactive version here:  
+[carDealer](https://car-dealer-pi.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Video Explanation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Watch a short video explaining the work principles:  
+[Watch Video](https://www.loom.com/share/1cbb53a867a64b169f0671111a36ea8b?sid=ceaeb5ac-6f46-42a1-8a64-e8e7ded08b3f)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Instructions to Run App locally
 
-## Learn More
+Follow these steps to run application code on your computer:
 
-To learn more about Next.js, take a look at the following resources:
+1. Click the **"Code"** button on the main page of the GitHub repository.
+2. In the opened "Code" window, click the **"Codespaces"** tab.
+3. Click the big green button labeled **"Create codespace on main"** in the middle of the opened "Code" window.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ![Step 1](./instruction-images/Step%201.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. A new browser tab will open.
+5. Look for the **"Terminal"** tab. It should be opened at the bottom of the page automatically.
+6. Click inside the Terminal to focus it.
+7. Type `pnpm install` and press **Enter**.
 
-## Deploy on Vercel
+   ![Step 2](./instruction-images//Step%202.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+8. Wait for the installation to complete...
+9. While waiting, imagine cruising in your dream car. 🚗✨
+10. Once installation is finished, type `pnpm run dev` and press **Enter**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ![Step 3](./instruction-images/Step%203.png)
+
+11. After a few moments, the Next.js 15.1.4 (Turbopack) section will appear in your terminal.
+12. Press and hold the Cmd key (for macOS) or the Ctrl key (for Windows/Linux), then click the URL provided in the 'Local:' line to open the site in a new browser tab. Do not copy and paste the URL manually, as clicking directly from the terminal guarantees the correct environment is used.
+
+    ![Step 4](./instruction-images/Step%204.png)
+
+13. Enjoy exploring the Car dealer app! 🎉
+
+### Additional Notes
+
+- Ensure you have **pnpm** installed in your Codespace. If not, you may need to install it first.
