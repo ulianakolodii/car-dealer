@@ -1,6 +1,6 @@
 # Explore Car Dealer App
 
-With the help of **Car Dealer App**, you can investigate more about your favorite Star Wars heroes!
+With the help of **Car Dealer App**, you can investigate more about your favorite car maker models for a specific year!
 
 ### Interactive Version
 
@@ -10,7 +10,7 @@ You can access the interactive version here:
 ### Video Explanation
 
 Watch a short video explaining the work principles:  
-[Watch Video](https://www.loom.com/share/1cbb53a867a64b169f0671111a36ea8b?sid=ceaeb5ac-6f46-42a1-8a64-e8e7ded08b3f)
+[Watch Video](https://www.loom.com/share/180016e1180a4f87a2f8d2242105a7d7?sid=1e39c7fd-f30e-43ae-ab35-d1a5a698eb52)
 
 ### Instructions to Run App locally
 
