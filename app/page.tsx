@@ -6,6 +6,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import Vehicles from './components/Vehicles';
+import { Suspense } from 'react';
+import VehicleSkeleton from './components/VehicleSkeleton';
 
 const Home = async () => {
   return (
@@ -20,7 +22,9 @@ const Home = async () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Vehicles />
+              <Suspense fallback={<VehicleSkeleton />}>
+                <Vehicles />
+              </Suspense>
             </CardContent>
           </Card>
         </div>
